@@ -1,5 +1,6 @@
 const key = 'd2816c5d1df2915df983bc9434b35661'
-const WEATHER_BASE_URL = 'http://api.openweathermap.org/data/2.5/weather?appid=' + key + '&q='
+const fahrenheit = '&units=imperial'
+const WEATHER_BASE_URL = 'http://api.openweathermap.org/data/2.5/weather?appid=' + key + '&q=' 
 const main = () => {
   document.querySelector('h1').textContent += '?'
 }
@@ -7,9 +8,9 @@ const main = () => {
 const buttonUpdateEvent = () => {
   // console.log('My Button is being clicked')
   const userInput = document.querySelector('.input').value
-  console.log(userInput)
+  // console.log(userInput)
 
-  const _url = `${WEATHER_BASE_URL}${userInput}`
+  const _url = `${WEATHER_BASE_URL}${userInput}${fahrenheit}` 
 
   // const _url = 'http://api.openweathermap.org/data/2.5/weather?q=' + '&units=imperial' + '&appid=d2816c5d1df2915df983bc9434b35661'
   // const searchAPI = () => {
@@ -27,13 +28,10 @@ const buttonUpdateEvent = () => {
       }
     }
     ).then(searchResults => {
-      document.querySelector('.searchResults').textContent = userInput + searchResults
-      console.log("search results = ", searchResults)
+      document.querySelector('.searchResults').textContent = userInput + ' your forecast right now is ' + searchResults.main.temp + '° F'
 
-      // const parent = document.querySelector()
     })
 
-  console.log(userInput)
 }
 
 
