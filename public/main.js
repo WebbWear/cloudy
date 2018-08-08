@@ -12,12 +12,6 @@ const buttonUpdateEvent = () => {
 
   const _url = `${WEATHER_BASE_URL}${userInput}${fahrenheit}` 
 
-  // const _url = 'http://api.openweathermap.org/data/2.5/weather?q=' + '&units=imperial' + '&appid=d2816c5d1df2915df983bc9434b35661'
-  // const searchAPI = () => {
-
-
-
-
   fetch(_url)
     .then(resp => {
       console.log('response = ', resp)
@@ -33,8 +27,6 @@ const buttonUpdateEvent = () => {
     })
 
 }
-
-
 
 document.addEventListener('DOMContentLoaded', main)
 document.querySelector('.updateWeather').addEventListener('click', buttonUpdateEvent)
